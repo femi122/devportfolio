@@ -1,0 +1,1026 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <!--==================== SWIPER CSS ====================-->
+    <link rel="stylesheet" href="./packages/css/swiper-bundle.min.css">
+    
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="./packages/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+
+    <title>Yusuf Obafemi</title>
+</head>
+<style>
+    /* Skills Section */
+.skills__content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.skills__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.skills__icon {
+    font-size: 24px;
+    color: #4caf50;
+}
+
+.skills__title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.skills__subtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+.skills__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.skills__data {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.skills__titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skills__name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+}
+
+.skills__number {
+    font-size: 14px;
+    color: #666;
+}
+
+.skills__bar {
+    height: 6px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skills__percentage {
+    display: block;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Individual Skill Colors and Widths */
+.skills__html { width: 90%; background-color: #e44d26; }
+.skills__css { width: 80%; background-color: #1572b6; }
+.skills__js { width: 75%; background-color: #f7df1e; }
+.skills__jquery { width: 70%; background-color: #0769ad; }
+.skills__php { width: 85%; background-color: #777bb3; }
+.skills__wordpress { width: 80%; background-color: #21759b; }
+.skills__node { width: 70%; background-color: #83cd29; }
+.skills__next { width: 65%; background-color: #000; }
+.skills__react { width: 70%; background-color: #61dafb; }
+.skills__mysql { width: 80%; background-color: #4479a1; }
+.skills__mongodb { width: 65%; background-color: #47a248; }
+.skills__python { width: 75%; background-color: #306998; }
+.skills__selenium { width: 70%; background-color: #43b02a; }
+.skills__opencv { width: 65%; background-color: #5a5a5a; }
+.skills__api { width: 80%; background-color: #ff9800; }
+.skills__linux { width: 75%; background-color: #f34c26; }
+.skills__git { width: 85%; background-color: #f1502f; }
+.contact__form {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact__content {
+    margin-bottom: 15px;
+}
+img {
+    width: 120% !important;
+    height: 60%;
+  }
+
+.contact__label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact__input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block; /* added display property */
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.button .loading {
+    display: none;
+}
+
+.button.loading .default-text {
+    display: none;
+}
+
+.button.loading .loading {
+    display: inline-block;
+}
+/* Add a simple loading spinner */
+.loading {
+    border: 3px solid #f3f3f3; /* Light grey */
+    border-top: 3px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 2s linear infinite;
+    display: none;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@media screen and (max-width: 768px) {
+    img {
+        width: 110% !important;
+        height: 80%;
+    }
+}
+
+</style>
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header scroll-header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Yusuf Kabir Obafemi</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i>Home
+                        </a>
+                    </li>
+                    <!-- <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class="uil uil-user nav__icon"></i>About
+                        </a>
+                    </li> -->
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link active-link">
+                            <i class="uil uil-file-alt nav__icon"></i>Skills
+                        </a>
+                    </li>
+                      <!-- <li class="nav__item">
+                        <a href="#services" class="nav__link">
+                            <i class="uil uil-briefcase-alt nav__icon"></i>Services
+                        </a>
+                    </li> -->
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i>Portfolio                                
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-message nav__icon"></i>Contact                               
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+            <div class="nav__btns">
+                <!-- Theme change button -->
+
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home" style="padding-bottom: 0;">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">Hi, I'am Obafemi</h1>
+                    <h3 class="home__subtitle">Web Developer</h3>
+                    <p class="home__description">Highly skilled web developer with a passion for creating elegant, efficient, and user-friendly websites. Committed to delivering high-quality solutions that meet your specific needs and exceed your expectations.</p>
+                    <!-- <a href="#contact" class="button button--flex home__button">
+                        Contact Me<i class="uil uil-message button__icon"></i>
+                    </a> -->
+                </div>
+
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-button button--flex" style="visibility: hidden;">
+                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                        <span class="home__scroll-name">Scroll Down</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== SKILLS ====================-->
+        <section class="skills section" id="skills" style="padding-top: 0;">
+            <h2 class="section__title">Skills</h2>
+            <span class="section__subtitle">My technical level</span>
+
+            <div class="skills__container container grid">
+
+                <div>
+                    <!--==================== SKILLS 3 ====================-->
+                    <div class="skills__content skills__open">
+                        <div class="skills__header">
+                           <i class="uil uil-brackets-curly skills__icon"></i>
+                           <div>
+                               <h1 class="skills__title">Web Developer</h1>
+                               <span class="skills__subtitle">More than 3 years</span>
+                           </div>
+                    
+                           <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <div class="skills__list grid">
+                            
+                            <!-- HTML -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">HTML</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__html"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- CSS -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">CSS</h3>
+                                    <span class="skills__number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__css"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- JavaScript -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">JavaScript</h3>
+                                    <span class="skills__number">75%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__js"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- jQuery -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">jQuery</h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__jquery"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- PHP -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">PHP</h3>
+                                    <span class="skills__number">85%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__php"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- WordPress -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">WordPress</h3>
+                                    <span class="skills__number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__wordpress"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- Node.js -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Node.js</h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__node"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- Next.js -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Next.js</h3>
+                                    <span class="skills__number">65%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__next"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- React.js -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">React.js</h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__react"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- MySQL -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">MySQL</h3>
+                                    <span class="skills__number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__mysql"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- MongoDB -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">MongoDB</h3>
+                                    <span class="skills__number">65%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__mongodb"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- Python -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Python</h3>
+                                    <span class="skills__number">75%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__python"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- Selenium -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Selenium</h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__selenium"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- OpenCV -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">OpenCV</h3>
+                                    <span class="skills__number">65%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__opencv"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- APIs -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">RESTful APIs</h3>
+                                    <span class="skills__number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__api"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- Linux & VPS -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Linux & VPS</h3>
+                                    <span class="skills__number">75%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__linux"></span>
+                                </div>
+                            </div>
+                    
+                            <!-- Git & GitHub -->
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Git & GitHub</h3>
+                                    <span class="skills__number">85%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__git"></span>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </section>
+
+          <!--==================== QUALIFICATION ====================-->
+          <section class="qualification__section">
+            <h2 class="section__title">Qualification & Certifications</h2>
+            <span class="section__subtitle">My personal journey</span>
+        
+            <div class="qualification__container container">
+                <div class="qualification__tabs">
+                    <div class="qualification__button button--flex qualification__active" data-target="#education">
+                        <i class="uil uil-graduation-cap qualification__icon"></i>
+                        Education
+                    </div>
+                    <div class="qualification__button button--flex" data-target="#certifications">
+                        <i class="uil uil-award qualification__icon"></i>
+                        Certifications
+                    </div>
+                </div>
+        
+                <div class="qualification__sections">
+                    <!--==================== EDUCATION SECTION ====================-->
+                    <div class="qualification__content qualification__active" data-content="" id="education">
+                        <!--==================== QUALIFICATION 1 ====================--> 
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">BSc in Physics</h3>
+                                <span class="qualification__subtitle">Lagos State University, Ojo</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2018 - 2023
+                                </div>
+                            </div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+        
+                        <!--==================== QUALIFICATION 2 ====================--> 
+                        <div class="qualification__data">
+                            <div></div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                            </div>
+                            <div>
+                                <h3 class="qualification__title">Networking & Computer Repair</h3>
+                                <span class="qualification__subtitle">New World Communication</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Online
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+        
+                    <!--==================== CERTIFICATIONS SECTION ====================-->
+                    <div class="qualification__content" data-content="" id="certifications">
+                        <!--==================== CERTIFICATION 1 ====================--> 
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">Python for Data Science</h3>
+                                <span class="qualification__subtitle">freeCodeCamp - Online</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2024
+                                </div>
+                            </div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+        
+                        <!--==================== CERTIFICATION 2 ====================--> 
+                        <div class="qualification__data">
+                            <div></div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                            </div>
+                            <div>
+                                <h3 class="qualification__title">OpenCV Certification(Computer Vision)</h3>
+                                <span class="qualification__subtitle">In Progress</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2024
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        
+  
+    <!--==================== SERVICES ====================-->
+    <!--==================== PORTFOLIO ====================-->
+    <section class="portfolio section" id="portfolio">
+
+        <h2 class="section__title">Portfolio</h2>
+        <span class="section__subtitle" style="margin-bottom: 0;">Most recent works</span>
+    
+        <div class="portfolio__container container swiper-container">
+            <div class="swiper-wrapper">
+                
+                <!-- MyBillApp -->
+                <div class="portfolio__content grid swiper-slide">
+                    <img src="./packages/images/portfolio2.png" alt="MyBillApp" class="portfolio__img">
+                    <div class="portfolio_">
+                        <h3 class="portfolio__title">MyBillApp</h3>  
+                        <p class="portfolio__description">A seamless bill payment platform that enables users to pay for electricity, purchase data bundles, and buy airtime using Flutterwave for secure transactions.</p>
+                        <a href="https://mybillapp.com/pub/index.php" class="button button--flex button--small portfolio__button">
+                            Visit
+                            <i class="uil uil-arrow-right button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- EOH Travel And Tours -->
+                <div class="portfolio__content grid swiper-slide">
+                    <img src="./packages/images/portfolio1.PNG" alt="EOH Travel And Tours" class="portfolio__img">
+                    <div class="portfolio_">
+                        <h3 class="portfolio__title">EOH Travel And Tours</h3>
+                        <p class="portfolio__description">A dynamic travel and tours platform designed for seamless bookings, rich destination insights, and a smooth user experience across all devices.</p>
+                        <a href="http://travel.eohempirelimited.com/" class="button button--flex button--small portfolio__button">
+                            Visit
+                            <i class="uil uil-arrow-right button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Funkey Bee -->
+                <div class="portfolio__content grid swiper-slide">
+                    <img src="./packages/images/funkeybee.PNG" alt="Funkey Bee" class="portfolio__img">
+                    <div class="portfolio_">
+                        <h3 class="portfolio__title">Funkey Bee</h3>
+                        <p class="portfolio__description">An African cuisine restaurant in the UK, offering a taste of home through a well-structured WordPress website for online orders and reservations.</p>
+                        <a href="https://funkeybee.co.uk/" class="button button--flex button--small portfolio__button">
+                            Visit
+                            <i class="uil uil-arrow-right button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <!-- Navigation Arrows -->
+            <div class="swiper-button-next">
+                <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+            </div>
+            <div class="swiper-button-prev">
+                <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+            </div>
+    
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+    
+        </div>
+    
+    </section>
+
+    <!--==================== PROJECT IN MIND ====================-->
+    <section class="project section">
+
+        <div class="project__bg">
+            <div class="project__container container grid">
+                <div class="project__data">
+                    <h2 class="project__title">You have a new project?</h2>
+                    <p class="project__description">Contact me now and get discounts on your Web development projects.</p>
+                    <!-- <a href="#contact" class="button button--flex button--white">Contact me
+                        <i class="uil uil-message project__icon button__icon"></i>
+                    </a> -->
+                   
+                </div>
+                <!-- <img src="assets/img/project.png" alt="" class="project__img"> -->
+            </div>
+        </div>
+
+    </section>
+
+    <!--==================== TESTIMONIAL ====================-->
+    <!-- <section class="testimonial section">
+
+        <h2 class="section__title">Testimonials</h2>
+        <span class="section__subtitle">My client saying</span>
+
+        <div class="testimonial__container container swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events" style="cursor: grab;">
+            <div class="swiper-wrapper" style="transform: translate3d(-816px, 0px, 0px); transition-duration: 0ms;" id="swiper-wrapper-280b3739f1522d0d" aria-live="polite"><div class="testimonial__content swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 360px; margin-right: 48px;" role="group" aria-label="2 / 3">
+                    <div class="testimonial__data">
+                        <div class="testimonial__header">
+                            <img src="./packages/images/yuga.PNG" alt="" class="testimonial__img">
+                            
+                            <div>
+                                <h3 class="testimonial__name">Yugadarshan</h3>
+                                <span class="testimonial__client">Client</span>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                        </div>
+                    </div>
+
+                    <p class="testimonial__description">I get a good impression, I carry out my project with all the 
+                        possible quality and attention and support 24 hours a day.
+                    </p>
+                </div><div class="testimonial__content swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="2" style="width: 360px; margin-right: 48px;" role="group" aria-label="3 / 3">
+                    <div class="testimonial__data">
+                        <div class="testimonial__header">
+                            <img src="./packages/images/shenan.PNG" alt="" class="testimonial__img">
+                            
+                            <div>
+                                <h3 class="testimonial__name">Shenan Sachinthan</h3>
+                                <span class="testimonial__client">Client</span>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                        </div>
+                    </div>
+
+                    <p class="testimonial__description">I get a good impression, I carry out my project with all the 
+                        possible quality and attention and support 24 hours a day.</p>
+                </div>
+            <!--==================== TESTIMONIAL 1 ====================--
+                <div class="testimonial__content swiper-slide swiper-slide-active" data-swiper-slide-index="0" style="width: 360px; margin-right: 48px;" role="group" aria-label="1 / 3">
+                    <div class="testimonial__data">
+                        <div class="testimonial__header">
+                            
+                            <div>
+                                <h3 class="testimonial__name">Erinosho Olalekan</h3>
+                                <span class="testimonial__client">Client</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="testimonial__description">Incredible experience working with Yusuf! He transformed our vision into a sleek, high-performing website. Highly recommended!
+                    </p>
+                </div>
+                <!--==================== TESTIMONIAL 2 ====================--
+                <div class="testimonial__content swiper-slide swiper-slide-next" data-swiper-slide-index="1" style="width: 360px; margin-right: 48px;" role="group" aria-label="2 / 3">
+                    <div class="testimonial__data">
+                        <div class="testimonial__header">
+                            
+                            <div>
+                                <h3 class="testimonial__name">Shomoye Olorunfemi </h3>
+                                <span class="testimonial__client">Client</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="testimonial__description">Professional, efficient, and creative! Yusuf delivered a stunning website that exceeded our expectations. A true expert in web development!
+                    </p>
+                </div>
+                <!--==================== TESTIMONIAL 3 ====================--
+                <div class="testimonial__content swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="2" style="width: 360px; margin-right: 48px;" role="group" aria-label="3 / 3">
+                    <div class="testimonial__data">
+                        <div class="testimonial__header">
+                            <img src="./packages/images/shenan.PNG" alt="" class="testimonial__img">
+                            
+                            <div>
+                                <h3 class="testimonial__name">Shenan Sachinthan</h3>
+                                <span class="testimonial__client">Client</span>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                        </div>
+                    </div>
+
+                    <p class="testimonial__description">I get a good impression, I carry out my project with all the 
+                        possible quality and attention and support 24 hours a day.</p>
+                </div>      
+            <div class="testimonial__content swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 360px; margin-right: 48px;" role="group" aria-label="1 / 3">
+                    <div class="testimonial__data">
+                        <div class="testimonial__header">
+                            <img src="./packages/images/arun.PNG" alt="" class="testimonial__img">
+                            
+                            <div>
+                                <h3 class="testimonial__name">Arun Prashanth</h3>
+                                <span class="testimonial__client">Client</span>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                        </div>
+                    </div>
+
+                    <p class="testimonial__description">I get a good impression, I carry out my project with all the 
+                        possible quality and attention and support 24 hours a day.
+                    </p>
+                </div><div class="testimonial__content swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 360px; margin-right: 48px;" role="group" aria-label="2 / 3">
+                    <div class="testimonial__data">
+                        <div class="testimonial__header">
+                            <img src="./packages/images/yuga.PNG" alt="" class="testimonial__img">
+                            
+                            <div>
+                                <h3 class="testimonial__name">Yugadarshan</h3>
+                                <span class="testimonial__client">Client</span>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                            <i class="uil uil-star testimonial__icon-star"></i>
+                        </div>
+                    </div>
+
+                    <p class="testimonial__description">I get a good impression, I carry out my project with all the 
+                        possible quality and attention and support 24 hours a day.
+                    </p>
+                </div></div>
+
+            <!--Add pagination--
+            <div class="swiper-pagination swiper-pagination-testimonial swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-bullets-dynamic" style="width: 80px;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullet-active-main" style="left: 16px;" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active-next" style="left: 16px;" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active-next-next" style="left: 16px;" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        </section> -->
+
+    <!--==================== CONTACT ME ====================-->
+    <section class="contact section" id="contact">
+        <h2 class="section__title">Contact me</h2>
+        <span class="section__subtitle">Get in touch</span>
+
+        <div class="contact__container container grid">
+            <div>
+                <div class="contact__information">
+                    <i class="uil uil-phone-alt contact__icon"></i>
+
+                    <div>
+                        <h3 class="contact__title">Call me</h3>
+                        <span class="contatc__subtitle">(+234) 7015096318</span>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="contact__information">
+                <i class="uil uil-envelope contact__icon"></i>
+
+                <div>
+                    <h3 class="contact__title">E-mail</h3>
+                    <span class="contatc__subtitle">yusufabdulkabir7@gmail.com</span>
+                </div>
+            </div>
+            <!-- <form class="contact__form">
+                <div class="contact__inputs">
+                    <div class="contact__content">
+                        <label class="contact__label">Name</label>
+                        <input type="text" class="contact__input" id="name">
+                    </div>
+            
+                    <div class="contact__content">
+                        <label class="contact__label">E-mail</label>
+                        <input type="email" class="contact__input" id="email">
+                    </div>
+                </div>
+            
+                <div class="contact__content">
+                    <label class="contact__label">Subject</label>
+                    <input type="text" class="contact__input" id="subject">
+                </div>
+            
+                <div class="contact__content">
+                    <label class="contact__label">Description</label>
+                    <textarea cols="0" rows="7" class="contact__input" id="message"></textarea>
+                </div>
+            
+                <div>
+                    <button type="button" class="button" id="sendButton">
+                        <span class="default-text">Send message</span>
+                        <span class="loading"></span>
+                    </button>
+                </div>
+            </form> -->
+            
+        </div>
+
+    </section>
+</main>
+
+<!--==================== FOOTER ====================-->
+<footer class="footer">
+
+    <div class="footer__bg">
+        <div class="footer__container container grid">
+            <div>
+                <h1 class="footer__title">Yusuf Kabir Obafemi</h1>
+                <span class="footer__subtitle">Web Developer</span>
+            </div>
+
+            <ul class="footer__links">
+                <!-- <li>
+                    <a href="#services" class="footer__link">Services</a>
+                </li> -->
+                <li>
+                    <a href="#portfolio" class="footer__link">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#contact" class="footer__link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="footer__socials">
+            </div>
+        </div>
+        <p class="footer__copy" style="color: #000;">©2025. All rights reserved.</p>
+    </div>
+</footer>
+
+<!--==================== SCROLL TOP ====================-->
+<a href="#" class="scrollup show-scroll" id="scroll-up">
+    <i class="uil uil-arrow-up scrollup__icon"></i>
+</a>
+
+
+<!--==================== SWIPER JS ====================-->
+<script src="./packages/js/swiper-bundle.min.js"></script>
+
+<!--==================== MAIN JS ====================-->
+<script src="./packages/js/main.js"></script>
+<script>
+        $(document).ready(function() {
+            $("#sendButton").click(function(e) {
+                e.preventDefault(); // Prevent the default form submission
+        
+                // Get form values
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var subject = $("#subject").val();
+                var message = $("#message").val();
+        
+                // Basic Validation (Add more as needed)
+                if (name === "" || email === "" || subject === "" || message === "") {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Please fill in all fields.',
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                    return;
+                }
+        
+                // SweetAlert2 Confirmation
+                Swal.fire({
+                    title: 'Are you sure you want to send this message?',
+                    html: `<b>Name:</b> ${name}<br><b>Email:</b> ${email}<br><b>Subject:</b> ${subject}<br><b>Message:</b> ${message}`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, send it!',
+                    cancelButtonText: 'No, cancel!'
+                }).then((result) => {
+                    if (result.isConfirmed) { // User clicked "Yes, send it!"
+        
+                        // Disable the button and show loading spinner
+                        var sendButton = $("#sendButton");
+                        sendButton.prop("disabled", true).addClass("loading");
+        
+                        // AJAX Request using jQuery
+                        $.ajax({
+                            url: "send_email.php", // Replace with the actual URL to your server-side script
+                            type: "POST",
+                            data: {
+                                name: name,
+                                email: email,
+                                subject: subject,
+                                message: message
+                            },
+                            dataType: "json", // Expect JSON response from the server
+                            success: function(response) {
+                                // Re-enable the button after success
+                                sendButton.prop("disabled", false).removeClass("loading");
+        
+                                if (response.status === "success") {
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: response.message,
+                                        toast: true,
+                                        position: 'top-end',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                    });
+        
+                                    // Clear the form after successful submission (optional)
+                                    $("#name").val("");
+                                    $("#email").val("");
+                                    $("#subject").val("");
+                                    $("#message").val("");
+                                } else {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: response.message,
+                                        toast: true,
+                                        position: 'top-end',
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                    });
+                                }
+                            },
+                            error: function(xhr, status, error) {
+                                // Re-enable the button after error
+                                sendButton.prop("disabled", false).removeClass("loading");
+        
+                                console.error("AJAX Error: " + status + " - " + error);
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'An error occurred. Please try again later.',
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 3000
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body></html>
